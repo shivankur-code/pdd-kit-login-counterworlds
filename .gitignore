@@ -1,0 +1,5 @@
+__pycache__/
+.venv/
+# Contain PDD Kit's contract text; build_model.py and study.py recreate them.
+verus-login/login_model.rs
+evidence/*/variants/*.rs

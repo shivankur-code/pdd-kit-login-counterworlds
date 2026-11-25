@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "results_sha256": "7d2c80d566adbfd9d73335f16893dc2d0595a126a2cabda54997ab3e37f3c244",
+  "symbolic_queries_rechecked": 195,
+  "finite_candidate_evaluations": 5632,
+  "summary": [
+    {
+      "task": "withdrawal",
+      "candidates": 16,
+      "weak_accepted": 3,
+      "strong_accepted": 1,
+      "weak_disagreeing_pairs": 3,
+      "weak_equivalent_pairs": 0,
+      "strong_disagreeing_pairs": 0
+    },
+    {
+      "task": "transfer",
+      "candidates": 16,
+      "weak_accepted": 4,
+      "strong_accepted": 1,
+      "weak_disagreeing_pairs": 6,
+      "weak_equivalent_pairs": 0,
+      "strong_disagreeing_pairs": 0
+    },
+    {
+      "task": "login",
+      "candidates": 16,
+      "weak_accepted": 4,
+      "strong_accepted": 1,
+      "weak_disagreeing_pairs": 6,
+      "weak_equivalent_pairs": 0,
+      "strong_disagreeing_pairs": 0
+    },
+    {
+      "task": "sort",
+      "candidates": 16,
+      "weak_accepted": 9,
+      "strong_accepted": 1,
+      "weak_disagreeing_pairs": 36,
+      "weak_equivalent_pairs": 0,
+      "strong_disagreeing_pairs": 0
+    }
+  ],
+  "limits": "Constructed examples; same solver replay; independent finite Python encoding, not independent universal proof."
+}

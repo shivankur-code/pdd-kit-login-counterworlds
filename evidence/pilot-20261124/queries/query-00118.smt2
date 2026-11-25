@@ -1,0 +1,16 @@
+; benchmark generated from python API
+(set-info :status unknown)
+(declare-fun locked () Bool)
+(declare-fun password () Bool)
+(declare-fun exists () Bool)
+(declare-fun account () Int)
+(declare-fun admin () Bool)
+(assert
+ (let (($x36 (not locked)))
+(let (($x9 (and exists password $x36)))
+(let ((?x10 (ite $x9 0 (- 1))))
+(let ((?x32 (ite $x9 account (- 1))))
+(let (($x54 (or (and (distinct $x9 $x9) true) (and (distinct (and $x9 admin) (and $x9 admin)) true) (and (distinct ?x32 ?x10) true))))
+(let (($x37 (> account 0)))
+(and $x37 $x54))))))))
+(check-sat)

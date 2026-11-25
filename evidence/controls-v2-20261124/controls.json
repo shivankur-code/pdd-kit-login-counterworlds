@@ -1,0 +1,152 @@
+{
+  "status": "PASS",
+  "kind": "post-pilot-supplemental-controls",
+  "scope": "Output uniqueness for mathematical contracts, not arbitrary program termination, side effects, or deployed code.",
+  "source_sha256": {
+    "counterworlds.py": "1f617a2109aab7103f0daa13058cbee8423236f3a59a5f658c7a77fbd633fa4e",
+    "controls.py": "0bf2dfe67222e76388df5f21da8c21a8606d5288f85240819f7ceda03df6715c",
+    "audit.py": "754891719bc8edb14452ffa455cb7682be9a62fa4971506fcdd24ed99a64362b",
+    "test_counterworlds.py": "a73ce6081bc6f9fb01507087a1f1671ba738eaf63233161d499dfa084c20a3c8",
+    "PLAN.md": "12584bdf0c2fd521a1311b420841c03dbf9bd1f6c35226b0dbace9558c3c2eb8"
+  },
+  "controls": [
+    {
+      "task": "withdrawal",
+      "equivalent_rewrite": {
+        "result": "unsat",
+        "query": "query-00001.smt2",
+        "witness": null
+      },
+      "weak_contract_output_freedom": {
+        "result": "sat",
+        "query": "query-00002.smt2",
+        "witness": {
+          "balance": 1,
+          "amount": 0,
+          "first_0": false,
+          "first_1": 0,
+          "second_0": false,
+          "second_1": 1
+        }
+      },
+      "strong_contract_output_uniqueness": {
+        "result": "unsat",
+        "query": "query-00003.smt2",
+        "witness": null
+      },
+      "strong_contract_observable_uniqueness": {
+        "result": "unsat",
+        "query": "query-00004.smt2",
+        "witness": null
+      }
+    },
+    {
+      "task": "transfer",
+      "equivalent_rewrite": {
+        "result": "unsat",
+        "query": "query-00005.smt2",
+        "witness": null
+      },
+      "weak_contract_output_freedom": {
+        "result": "sat",
+        "query": "query-00006.smt2",
+        "witness": {
+          "balance": 1,
+          "amount": 1,
+          "recipient": 0,
+          "first_0": 0,
+          "first_1": 0,
+          "second_0": 0,
+          "second_1": 1
+        }
+      },
+      "strong_contract_output_uniqueness": {
+        "result": "unsat",
+        "query": "query-00007.smt2",
+        "witness": null
+      },
+      "strong_contract_observable_uniqueness": {
+        "result": "unsat",
+        "query": "query-00008.smt2",
+        "witness": null
+      }
+    },
+    {
+      "task": "login",
+      "equivalent_rewrite": {
+        "result": "unsat",
+        "query": "query-00009.smt2",
+        "witness": null
+      },
+      "weak_contract_output_freedom": {
+        "result": "sat",
+        "query": "query-00010.smt2",
+        "witness": {
+          "exists": true,
+          "password": true,
+          "locked": true,
+          "admin": true,
+          "account": 1,
+          "first_0": false,
+          "first_1": false,
+          "first_2": 1,
+          "second_0": false,
+          "second_1": false,
+          "second_2": 0
+        }
+      },
+      "strong_contract_output_uniqueness": {
+        "result": "sat",
+        "query": "query-00011.smt2",
+        "witness": {
+          "exists": true,
+          "password": true,
+          "locked": true,
+          "admin": true,
+          "account": 1,
+          "first_0": false,
+          "first_1": false,
+          "first_2": 0,
+          "second_0": false,
+          "second_1": false,
+          "second_2": 1
+        }
+      },
+      "strong_contract_observable_uniqueness": {
+        "result": "unsat",
+        "query": "query-00012.smt2",
+        "witness": null
+      }
+    },
+    {
+      "task": "sort",
+      "equivalent_rewrite": {
+        "result": "unsat",
+        "query": "query-00013.smt2",
+        "witness": null
+      },
+      "weak_contract_output_freedom": {
+        "result": "sat",
+        "query": "query-00014.smt2",
+        "witness": {
+          "left": 2,
+          "right": 0,
+          "first_0": 1,
+          "first_1": 1,
+          "second_0": 0,
+          "second_1": 2
+        }
+      },
+      "strong_contract_output_uniqueness": {
+        "result": "unsat",
+        "query": "query-00015.smt2",
+        "witness": null
+      },
+      "strong_contract_observable_uniqueness": {
+        "result": "unsat",
+        "query": "query-00016.smt2",
+        "witness": null
+      }
+    }
+  ]
+}

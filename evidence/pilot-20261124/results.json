@@ -1,0 +1,3258 @@
+{
+  "kind": "constructed-symbolic-pilot",
+  "python": "3.14.7",
+  "z3": "4.15.4",
+  "source_sha256": {
+    "PLAN.md": "12584bdf0c2fd521a1311b420841c03dbf9bd1f6c35226b0dbace9558c3c2eb8",
+    "requirements.txt": "dd03987c9f144fa223bf4e1c4780b2bb202dc945c7b6b3803ca85bca2933c9ea",
+    "counterworlds.py": "1f617a2109aab7103f0daa13058cbee8423236f3a59a5f658c7a77fbd633fa4e",
+    "audit.py": "754891719bc8edb14452ffa455cb7682be9a62fa4971506fcdd24ed99a64362b",
+    "test_counterworlds.py": "a73ce6081bc6f9fb01507087a1f1671ba738eaf63233161d499dfa084c20a3c8"
+  },
+  "tasks": [
+    {
+      "task": "withdrawal",
+      "candidates": [
+        {
+          "id": [
+            0,
+            0
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00001.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "unsat",
+            "query": "query-00002.smt2",
+            "witness": null
+          }
+        },
+        {
+          "id": [
+            0,
+            1
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00003.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00004.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            0,
+            2
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00005.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00006.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            0,
+            3
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00007.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00008.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00009.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00010.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00011.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00012.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00013.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00014.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            3
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00015.smt2",
+            "witness": {
+              "balance": 3,
+              "amount": 2
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00016.smt2",
+            "witness": {
+              "balance": 3,
+              "amount": 2
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00017.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00018.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00019.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00020.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00021.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00022.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            3
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00023.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00024.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00025.smt2",
+            "witness": {
+              "balance": 0,
+              "amount": -1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00026.smt2",
+            "witness": {
+              "balance": 0,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00027.smt2",
+            "witness": {
+              "balance": 0,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00028.smt2",
+            "witness": {
+              "balance": 0,
+              "amount": 0
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00029.smt2",
+            "witness": {
+              "balance": 0,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00030.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 1
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            3
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00031.smt2",
+            "witness": {
+              "balance": 0,
+              "amount": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00032.smt2",
+            "witness": {
+              "balance": 0,
+              "amount": 0
+            }
+          }
+        }
+      ],
+      "mutations": [
+        {
+          "target": 0,
+          "checks": [
+            {
+              "result": "sat",
+              "query": "query-00033.smt2",
+              "witness": {
+                "balance": 1,
+                "amount": 1
+              }
+            },
+            {
+              "result": "unsat",
+              "query": "query-00034.smt2",
+              "witness": null
+            }
+          ]
+        },
+        {
+          "target": 1,
+          "checks": [
+            {
+              "result": "unsat",
+              "query": "query-00035.smt2",
+              "witness": null
+            },
+            {
+              "result": "sat",
+              "query": "query-00036.smt2",
+              "witness": {
+                "balance": 0,
+                "amount": 0
+              }
+            }
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00037.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            true,
+            0
+          ],
+          "right_output": [
+            true,
+            1
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            0,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00038.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            true,
+            1
+          ],
+          "right_output": [
+            true,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            1
+          ],
+          "right": [
+            0,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00039.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            true,
+            1
+          ],
+          "right_output": [
+            true,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "task": "transfer",
+      "candidates": [
+        {
+          "id": [
+            0,
+            0
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00040.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "unsat",
+            "query": "query-00041.smt2",
+            "witness": null
+          }
+        },
+        {
+          "id": [
+            0,
+            1
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00042.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00043.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            0,
+            2
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00044.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00045.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            0,
+            3
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00046.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00047.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00048.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00049.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00050.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00051.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00052.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00053.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            3
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00054.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00055.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00056.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00057.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00058.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00059.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00060.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00061.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            3
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00062.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00063.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00064.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00065.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00066.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00067.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00068.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00069.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            3
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00070.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00071.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          }
+        }
+      ],
+      "mutations": [
+        {
+          "target": 0,
+          "checks": [
+            {
+              "result": "sat",
+              "query": "query-00072.smt2",
+              "witness": {
+                "balance": 1,
+                "amount": 1,
+                "recipient": 0
+              }
+            },
+            {
+              "result": "unsat",
+              "query": "query-00073.smt2",
+              "witness": null
+            }
+          ]
+        },
+        {
+          "target": 1,
+          "checks": [
+            {
+              "result": "unsat",
+              "query": "query-00074.smt2",
+              "witness": null
+            },
+            {
+              "result": "sat",
+              "query": "query-00075.smt2",
+              "witness": {
+                "balance": 1,
+                "amount": 1,
+                "recipient": 0
+              }
+            }
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00076.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            0,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00077.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            1
+          ],
+          "right_output": [
+            0,
+            2
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            0,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00078.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            1
+          ],
+          "right_output": [
+            0,
+            2
+          ]
+        },
+        {
+          "left": [
+            0,
+            1
+          ],
+          "right": [
+            0,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00079.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            0
+          ],
+          "right_output": [
+            0,
+            2
+          ]
+        },
+        {
+          "left": [
+            0,
+            1
+          ],
+          "right": [
+            0,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00080.smt2",
+            "witness": {
+              "balance": 1,
+              "amount": 1,
+              "recipient": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            0
+          ],
+          "right_output": [
+            0,
+            2
+          ]
+        },
+        {
+          "left": [
+            0,
+            2
+          ],
+          "right": [
+            0,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00081.smt2",
+            "witness": {
+              "balance": 2,
+              "amount": 2,
+              "recipient": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            4
+          ],
+          "right_output": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "task": "login",
+      "candidates": [
+        {
+          "id": [
+            0,
+            0
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00082.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "unsat",
+            "query": "query-00083.smt2",
+            "witness": null
+          }
+        },
+        {
+          "id": [
+            0,
+            1
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00084.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00085.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            0,
+            2
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00086.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00087.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            0,
+            3
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00088.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00089.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00090.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": true,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00091.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": true,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00092.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": true,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00093.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": true,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00094.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": true,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00095.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            3
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00096.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": true,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00097.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00098.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00099.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00100.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00101.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00102.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00103.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            3
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00104.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00105.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00106.smt2",
+            "witness": {
+              "exists": true,
+              "password": false,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00107.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": true,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00108.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": true,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00109.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00110.smt2",
+            "witness": {
+              "exists": false,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00111.smt2",
+            "witness": {
+              "exists": false,
+              "password": false,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            3
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00112.smt2",
+            "witness": {
+              "exists": true,
+              "password": false,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00113.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          }
+        }
+      ],
+      "mutations": [
+        {
+          "target": 0,
+          "checks": [
+            {
+              "result": "sat",
+              "query": "query-00114.smt2",
+              "witness": {
+                "exists": true,
+                "password": true,
+                "locked": false,
+                "admin": false,
+                "account": 1
+              }
+            },
+            {
+              "result": "unsat",
+              "query": "query-00115.smt2",
+              "witness": null
+            }
+          ]
+        },
+        {
+          "target": 1,
+          "checks": [
+            {
+              "result": "unsat",
+              "query": "query-00116.smt2",
+              "witness": null
+            },
+            {
+              "result": "sat",
+              "query": "query-00117.smt2",
+              "witness": {
+                "exists": false,
+                "password": false,
+                "locked": false,
+                "admin": false,
+                "account": 1
+              }
+            }
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00118.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            true,
+            false,
+            1
+          ],
+          "right_output": [
+            true,
+            false,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            0,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00119.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            true,
+            false,
+            1
+          ],
+          "right_output": [
+            true,
+            false,
+            2
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            0,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00120.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            true,
+            false,
+            1
+          ],
+          "right_output": [
+            true,
+            false,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            1
+          ],
+          "right": [
+            0,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00121.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": false,
+              "account": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            true,
+            false,
+            0
+          ],
+          "right_output": [
+            true,
+            false,
+            2
+          ]
+        },
+        {
+          "left": [
+            0,
+            1
+          ],
+          "right": [
+            0,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00122.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": true,
+              "account": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            true,
+            true,
+            0
+          ],
+          "right_output": [
+            true,
+            true,
+            1
+          ]
+        },
+        {
+          "left": [
+            0,
+            2
+          ],
+          "right": [
+            0,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00123.smt2",
+            "witness": {
+              "exists": true,
+              "password": true,
+              "locked": false,
+              "admin": true,
+              "account": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            true,
+            true,
+            2
+          ],
+          "right_output": [
+            true,
+            true,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "task": "sort",
+      "candidates": [
+        {
+          "id": [
+            0,
+            0
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00124.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00125.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          }
+        },
+        {
+          "id": [
+            0,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00126.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00127.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          }
+        },
+        {
+          "id": [
+            0,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00128.smt2",
+            "witness": {
+              "left": 0,
+              "right": -1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00129.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          }
+        },
+        {
+          "id": [
+            0,
+            3
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00130.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00131.smt2",
+            "witness": {
+              "left": 0,
+              "right": -1
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00132.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00133.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            1
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00134.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00135.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00136.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00137.smt2",
+            "witness": {
+              "left": 0,
+              "right": -1
+            }
+          }
+        },
+        {
+          "id": [
+            1,
+            3
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00138.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00139.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            0
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00140.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00141.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            1
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00142.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00143.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            2
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00144.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00145.smt2",
+            "witness": {
+              "left": 0,
+              "right": -1
+            }
+          }
+        },
+        {
+          "id": [
+            2,
+            3
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00146.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "unsat",
+            "query": "query-00147.smt2",
+            "witness": null
+          }
+        },
+        {
+          "id": [
+            3,
+            0
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00148.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00149.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            1
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00150.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00151.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            2
+          ],
+          "weak": {
+            "result": "sat",
+            "query": "query-00152.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00153.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          }
+        },
+        {
+          "id": [
+            3,
+            3
+          ],
+          "weak": {
+            "result": "unsat",
+            "query": "query-00154.smt2",
+            "witness": null
+          },
+          "strong": {
+            "result": "sat",
+            "query": "query-00155.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          }
+        }
+      ],
+      "mutations": [
+        {
+          "target": 0,
+          "checks": [
+            {
+              "result": "sat",
+              "query": "query-00156.smt2",
+              "witness": {
+                "left": -1,
+                "right": 0
+              }
+            },
+            {
+              "result": "unsat",
+              "query": "query-00157.smt2",
+              "witness": null
+            }
+          ]
+        },
+        {
+          "target": 1,
+          "checks": [
+            {
+              "result": "unsat",
+              "query": "query-00158.smt2",
+              "witness": null
+            },
+            {
+              "result": "sat",
+              "query": "query-00159.smt2",
+              "witness": {
+                "left": 0,
+                "right": 0
+              }
+            }
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            0,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00160.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            -1
+          ],
+          "right_output": [
+            -1,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            1,
+            1
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00161.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            1,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00162.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            2,
+            0
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00163.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            2,
+            1
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00164.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            -1
+          ],
+          "right_output": [
+            -1,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            2,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00165.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00166.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            3,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00167.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            -1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            3
+          ],
+          "right": [
+            1,
+            1
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00168.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            0
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            3
+          ],
+          "right": [
+            1,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00169.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            0,
+            3
+          ],
+          "right": [
+            2,
+            0
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00170.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            0,
+            3
+          ],
+          "right": [
+            2,
+            1
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00171.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            0,
+            3
+          ],
+          "right": [
+            2,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00172.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            0
+          ],
+          "right_output": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "left": [
+            0,
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00173.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            0,
+            3
+          ],
+          "right": [
+            3,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00174.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            0
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            1,
+            1
+          ],
+          "right": [
+            1,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00175.smt2",
+            "witness": {
+              "left": 0,
+              "right": -1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            -1
+          ],
+          "right_output": [
+            -1,
+            0
+          ]
+        },
+        {
+          "left": [
+            1,
+            1
+          ],
+          "right": [
+            2,
+            0
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00176.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            0
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            1,
+            1
+          ],
+          "right": [
+            2,
+            1
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00177.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            1,
+            1
+          ],
+          "right": [
+            2,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00178.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            1,
+            1
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00179.smt2",
+            "witness": {
+              "left": 0,
+              "right": -1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            -1
+          ],
+          "right_output": [
+            -1,
+            0
+          ]
+        },
+        {
+          "left": [
+            1,
+            1
+          ],
+          "right": [
+            3,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00180.smt2",
+            "witness": {
+              "left": 0,
+              "right": -1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            -1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            1,
+            3
+          ],
+          "right": [
+            2,
+            0
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00181.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            1,
+            3
+          ],
+          "right": [
+            2,
+            1
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00182.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            1,
+            3
+          ],
+          "right": [
+            2,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00183.smt2",
+            "witness": {
+              "left": 0,
+              "right": -1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            0
+          ],
+          "right_output": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "left": [
+            1,
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00184.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            1,
+            1
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            1,
+            3
+          ],
+          "right": [
+            3,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00185.smt2",
+            "witness": {
+              "left": 0,
+              "right": -1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            0
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            2,
+            0
+          ],
+          "right": [
+            2,
+            1
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00186.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            2,
+            0
+          ],
+          "right": [
+            2,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00187.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            2,
+            0
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00188.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            -1
+          ],
+          "right_output": [
+            -1,
+            0
+          ]
+        },
+        {
+          "left": [
+            2,
+            0
+          ],
+          "right": [
+            3,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00189.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            1
+          ],
+          "right_output": [
+            1,
+            1
+          ]
+        },
+        {
+          "left": [
+            2,
+            1
+          ],
+          "right": [
+            2,
+            2
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00190.smt2",
+            "witness": {
+              "left": 0,
+              "right": 1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            1
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            2,
+            1
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00191.smt2",
+            "witness": {
+              "left": 0,
+              "right": -1
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            -1
+          ],
+          "right_output": [
+            -1,
+            0
+          ]
+        },
+        {
+          "left": [
+            2,
+            1
+          ],
+          "right": [
+            3,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00192.smt2",
+            "witness": {
+              "left": -1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            -1,
+            0
+          ],
+          "right_output": [
+            0,
+            0
+          ]
+        },
+        {
+          "left": [
+            2,
+            2
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00193.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            0
+          ],
+          "right_output": [
+            0,
+            1
+          ]
+        },
+        {
+          "left": [
+            2,
+            2
+          ],
+          "right": [
+            3,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00194.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            0
+          ],
+          "right_output": [
+            1,
+            1
+          ]
+        },
+        {
+          "left": [
+            2,
+            3
+          ],
+          "right": [
+            3,
+            3
+          ],
+          "check": {
+            "result": "sat",
+            "query": "query-00195.smt2",
+            "witness": {
+              "left": 1,
+              "right": 0
+            }
+          },
+          "both_strong": false,
+          "left_output": [
+            0,
+            1
+          ],
+          "right_output": [
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "solver_queries": 195,
+  "elapsed_seconds": 1.5315092999999251,
+  "query_sha256": {
+    "query-00001.smt2": "cd8f5fe82155045997e356b155220d97273cad8cc6f43d70ef315ce2ac3e0c1e",
+    "query-00002.smt2": "a26ffca32ecc368ecd1819b92c415bf887714a5d4a80ad7f692196eceae3e39b",
+    "query-00003.smt2": "34d754c78e96e7d72804286a7a137decee7c3d292f09b8ace0d1517571ce7ca9",
+    "query-00004.smt2": "e51e98b55ca25937c9a717926e99ea13b201e6d5b857fab6b1caf399c8ed97bd",
+    "query-00005.smt2": "7c4e5d9aeb82f3c32adf6e07de780f7d50a650f17634ab3a264dfdf5ef45638a",
+    "query-00006.smt2": "c6af1ad594ace576f2fb171edefd672e98daafa089549aa05e882ecae4f47a35",
+    "query-00007.smt2": "59833a5c237a683e6f693e21a73ac5536ed0a65fbae19486a499a4e4e85436a6",
+    "query-00008.smt2": "3cdd98fd69722b0bb675dd22b4c979b36893e67ac685b40ea5dbff65b5fc5b6e",
+    "query-00009.smt2": "abea4415a1b21c6e840cab3396c59590fa9687d31ec18a9f9d7b799755526e8b",
+    "query-00010.smt2": "247c696c2fe615f127dd5575a836684666c87f78e921866e434a9fd74fef524e",
+    "query-00011.smt2": "a066518de0d0a07287c39031439834042fd1d2439edfb5e6bf7d9fade89d1e4e",
+    "query-00012.smt2": "c8d11ee71c0daf01cbc772a00643c0beff0ee5462664559e8a7599b89e4f41ab",
+    "query-00013.smt2": "61d7683eedd58c155ab852cf086a83a45a35cf386cdab8cfd113205d5f92891d",
+    "query-00014.smt2": "9788a7b2c1451e56cc270275bfb2cda1d972c4b6a2d909432a7a98f05b4d1677",
+    "query-00015.smt2": "570100c989b508715dc39af439b724511c42942d19e94669f77424328b00e1a7",
+    "query-00016.smt2": "e92b98aa7425b6f8ca979b577e9d8dddfd321033df9ba15e9d7ba605f2def7e0",
+    "query-00017.smt2": "776d77f25fdb93d8e8e4db7e668d01bb631bc2dfaeaaa69e2500132f85325256",
+    "query-00018.smt2": "ee95d2ad38f5bddcdad32b2b9a7f8970a510b10d5ac50f1d6855b98beba032c1",
+    "query-00019.smt2": "2b07a5a2a5e8dd25745469d08c1a3eefadcf7bb2524ee2f861df37f52ad46325",
+    "query-00020.smt2": "984973a4e6229abdf5212b56e274705c67076e1d9aab66214b8c61a15de8ed32",
+    "query-00021.smt2": "3012cf6abe1c41fb707db26e4f35ddad2543a605c3f0953f738535207ec01322",
+    "query-00022.smt2": "4635f9c0822d8d9467194c7a18513af14ee5272058294ac05b3db83e68358691",
+    "query-00023.smt2": "0a2a08a84bc77c368803a1c5dd8a862784a63ad8c286907bb28fe57824f782bb",
+    "query-00024.smt2": "33f2cb6be0361d734599028d11f532928e27e5b20b9631a1c1601a0a1dd052c5",
+    "query-00025.smt2": "0a810bafcf89ef102a4a4932a69d118de170b75971ade1676c00a6c48802cd90",
+    "query-00026.smt2": "1db261a7434e93c7502b3a9aedc392a105dd0e917a3b0fd2ee6c9d902da0e311",
+    "query-00027.smt2": "1517e1c37885b6d1644f9589d7463ac13f5f9183b9ce4dd936a0b137d57ec176",
+    "query-00028.smt2": "755b2842fa366003140c3b89cc52fd73878e96b8290de02b2f484820aa69b8b7",
+    "query-00029.smt2": "f0eff0aaea63601066a0dd2e00ad69c8477313239d4bf090db9903fa579e1fcf",
+    "query-00030.smt2": "3c3ee05664a9dd090d31e97e071a5f6049225c1b89868ecde198616b75600e4c",
+    "query-00031.smt2": "ec36f470fc1e72ac4b92f7a7c0ff48a0bbe3b614d05ce9493d330c099f89170b",
+    "query-00032.smt2": "0d13c8db168a8eaa5df4fbbfd3a2f938e66fc3def4579c70d9d5edc7136c7c14",
+    "query-00033.smt2": "562f92fde67601026b0037405350d50d5230ed47b5947a12e2db994b9b71a959",
+    "query-00034.smt2": "8e2345c0c91aef4319ab72ec3c20e8ac2ac0b9971d0828a5d90eef9d2cb23225",
+    "query-00035.smt2": "62a47f50bb14941369aeca1d105f091aa508601a03ed0579a0f8b67a0c607e22",
+    "query-00036.smt2": "250a5e965110581e5add2123dcee63834a93cd02bf8814f9b1032f849e8f2935",
+    "query-00037.smt2": "86d6d3ec1265aca6f5b5ba3a46a12a1766a0deb9a131cdb6ad2b870c405e7bf5",
+    "query-00038.smt2": "c4b9b5ab9d5bdb976b9c68672954319ee36e9d9df90f37884503ca1c57af78c0",
+    "query-00039.smt2": "bc506f273cb753a1ddc203f99a49c758ea4b84e40e064c6a5f5f36f27a2896f6",
+    "query-00040.smt2": "e7b3c1010af77995ee658c0cad060a1420a6cdf71946ac9f755f17b2c0444954",
+    "query-00041.smt2": "d37c55dbf444ad3e3ff66f2796ab123b3c857bc99bdf546d8c4970c6bec3c323",
+    "query-00042.smt2": "363a9f3adf6283a8749c44ff7cf9d9874cf9a288c5972e679a84a19ed49ddbbd",
+    "query-00043.smt2": "771c2b8d9b1e4ab3a363d79d6c82658dc4479668cb5f71b205a37ce08872720b",
+    "query-00044.smt2": "13f62c95a2a1899f6512438c08e111bb1776d10c2958bb6ee1dedf24124d13d0",
+    "query-00045.smt2": "456dd12be145d0ef86526927d948a3a77faea6cfc0860befe86dc4159e1b12fc",
+    "query-00046.smt2": "a9846aa194578e01076490d2e4bd0b11e0886083e9889214178351ce887349f0",
+    "query-00047.smt2": "5e1829f0675d1a674da2d98dfd3fd2e616920e046c8d2022462d9904305ed40f",
+    "query-00048.smt2": "9d0daa39e816ee10ec85afd7312892558d48bf8d88db0271c56f7b5ad69be88b",
+    "query-00049.smt2": "9b80855186e912488b9ae5123bb7c715ce14c5e273f069beca1e729a22bf0844",
+    "query-00050.smt2": "9f4f3cf707d49aba733eb4cdff23f7129c494a0b9d1a9c0687d68f512e221f58",
+    "query-00051.smt2": "eb7f54d1c2b4bfdda148e68ba4777d64c19b1ee0d03f164c504924e2c7f25174",
+    "query-00052.smt2": "ff8d050c404f16eb53dc5ee4dc9f58cc731a4406c1aa184d18b3b3a035eab883",
+    "query-00053.smt2": "1c2ce61f0f661bc3c7ed3b2fad1bb767bf5ec9b12d701fce2071362f5e9d0eb1",
+    "query-00054.smt2": "e3a5f1f9bc0c3b93516546074cb49ce2a8bfb9452b4b3c7bf4daa44cec1f2812",
+    "query-00055.smt2": "f0b375416e6919c02ab0241359614d9b880d73481906997b7048807978405af6",
+    "query-00056.smt2": "5d2a6a39baa5a7487b67945255c7c72c617b3f6d04356d504765263eb43ed97b",
+    "query-00057.smt2": "fcc9279ca3d599615052777b9e76d44df58592af59361dc7318078be1f4af6fa",
+    "query-00058.smt2": "9dbf2dd5c57311157d4cca20346b7227b8ee9e98e82dbbef5cc4363ce8ba836f",
+    "query-00059.smt2": "3bc77917b06b1ad4a07fbb6a45d542e517ef7a8fa53db1a2af0163d80523ab6b",
+    "query-00060.smt2": "e890464f318e36bb47d252898af0072ebbdb874656ee541979aa195cf1d9f890",
+    "query-00061.smt2": "aeecd9c6846a2f625b67af1bb11ba154b9221a5880e3a59f11ed1617e13f8696",
+    "query-00062.smt2": "cca0c9a6164f820681ec807d45057352bd115aea2ae2054e847dfbf1a970a943",
+    "query-00063.smt2": "bd71a8ece5fce373a1554deb295c24afd07bcd1b8ae9c6eba0c038346020c39c",
+    "query-00064.smt2": "517f1b1dd6bba2ca790ecf4d1b82a0eb76d4efbd0af2307d886159dbe771b465",
+    "query-00065.smt2": "cd0a759f3a65292459c6fbd8c6511500c5555dfffabb416bd3f8201833326516",
+    "query-00066.smt2": "e87139a9f56efdc29c6426974e37d66080d3461be37ef089799bc5235db5564d",
+    "query-00067.smt2": "abde207504dfc175be9ff35408784ddef92785281bea045edad31f582a14258f",
+    "query-00068.smt2": "537781bd26552c39751034ead5e762a8ab80d0bd76f9c9abb9c5d5997e1d1a54",
+    "query-00069.smt2": "9c7763d00877f081efa8a0110dd755166c26e2317b055f248a2ddfb5d3834220",
+    "query-00070.smt2": "481303e1b4282448b36c6a865e681d8c8f60248972fb95c910e57c3c4b6e52b8",
+    "query-00071.smt2": "0423cb2f9484e62a75653c4780ff30aa0333117bf86873535c2471a5d12f9422",
+    "query-00072.smt2": "bd948bc2eb2d1e757b0cb00d9ebdf0ba209da882cde2f62449b643380da7d494",
+    "query-00073.smt2": "de8c26d95274fcec0ab944afab11a38a697a905b57628aaa9d8c9105b03f62ff",
+    "query-00074.smt2": "8a896f38f22d6d766ddb76a32a3c96893006872551b69a8454ad55730ff5a89a",
+    "query-00075.smt2": "56899729889b60039b03f9e0c4dc3f0dab8913ec06a75aec02a9c5f9565d9133",
+    "query-00076.smt2": "ce8e56ed6bed4fcd6957bc0317a7302d54672b94e01638d4300e5433366b03b1",
+    "query-00077.smt2": "a120828974237c0416c84a296907c61332a5e23f6395ccedfdc03786cc541774",
+    "query-00078.smt2": "37b3f1f69cb6568d7d24f71a583c1968891e3ce4b502f966abb354c8f79b919d",
+    "query-00079.smt2": "42fe86f2d49acc03243e414afcabe38eea8411998b5275995bade69b669c2d0a",
+    "query-00080.smt2": "facce4465ed364af07b8240ab78943474c2b07e66596d2524d790d164eed8841",
+    "query-00081.smt2": "a401a71ebec4feffad1ac5d49e5cb7eb7b4fb9b515f7926811addf2ed79ab74c",
+    "query-00082.smt2": "cf4357d2a0a7e0f464a6a604ad77ded0d9e5898482f5d2f4e004a0650dcc6375",
+    "query-00083.smt2": "5a6542a91663a6b00ef5176c272d261d3eb098f3cc569e6afd7ed820ea4765c3",
+    "query-00084.smt2": "cf4357d2a0a7e0f464a6a604ad77ded0d9e5898482f5d2f4e004a0650dcc6375",
+    "query-00085.smt2": "5ed46b94fc6c280023bf0a6898315e46a0ccd1e50cf5cc5f0dad830a83a408b6",
+    "query-00086.smt2": "cf4357d2a0a7e0f464a6a604ad77ded0d9e5898482f5d2f4e004a0650dcc6375",
+    "query-00087.smt2": "b754298d53eb1ce29cd4d2f474007bdf4b42c2792e5f184a377ea19aca06f058",
+    "query-00088.smt2": "cf4357d2a0a7e0f464a6a604ad77ded0d9e5898482f5d2f4e004a0650dcc6375",
+    "query-00089.smt2": "30016aab9cae51d64984a44839a97f7b2a9977b2d45b1c6a26a59d7faff66d7b",
+    "query-00090.smt2": "37806f583b62b494ed3646a8d736e4f6aeb17ddb09bfb13d43cbba333ad199a8",
+    "query-00091.smt2": "b7a846f28294de0db4c844154b43cd6109019751afc2526b77b053f01fb8fa0f",
+    "query-00092.smt2": "37806f583b62b494ed3646a8d736e4f6aeb17ddb09bfb13d43cbba333ad199a8",
+    "query-00093.smt2": "0eb609bdb33f4eeee9c158303cdc710b5dc1691f57dc11fce8eb809275258d18",
+    "query-00094.smt2": "37806f583b62b494ed3646a8d736e4f6aeb17ddb09bfb13d43cbba333ad199a8",
+    "query-00095.smt2": "e159648b08e05b7cc5dd1c6a492237b87da125d62bf5a3613b66f929ee9ddd89",
+    "query-00096.smt2": "37806f583b62b494ed3646a8d736e4f6aeb17ddb09bfb13d43cbba333ad199a8",
+    "query-00097.smt2": "a67db25d9be4a6daaa4974edc4460e592bc943dd7d49a42ac69d257280792016",
+    "query-00098.smt2": "679c8ffb38b3a8589f02515550ca08e4fdcd7f1c71e4eb8c4e31c8dce2f9c73f",
+    "query-00099.smt2": "deb395a913c6e454305188dad2cdacb81e8c748827e55ec00594938e9f0251aa",
+    "query-00100.smt2": "679c8ffb38b3a8589f02515550ca08e4fdcd7f1c71e4eb8c4e31c8dce2f9c73f",
+    "query-00101.smt2": "d29538f46e523ef63ebc9b50739941e3bb989b865a9e1699b1fdfa66400ded44",
+    "query-00102.smt2": "679c8ffb38b3a8589f02515550ca08e4fdcd7f1c71e4eb8c4e31c8dce2f9c73f",
+    "query-00103.smt2": "57b23911b3c16b99204398441131112249cdfcea52585c195625e0973d7e70fe",
+    "query-00104.smt2": "679c8ffb38b3a8589f02515550ca08e4fdcd7f1c71e4eb8c4e31c8dce2f9c73f",
+    "query-00105.smt2": "64325a54cb0c6197c2e7aebae879a5b9769a5ccf54860b4101fb21502d34346e",
+    "query-00106.smt2": "ec3174c69a21099ec7de828a1256d640eb0ee335e1223c5cf326d76f7f8117f9",
+    "query-00107.smt2": "dc4d6d1df9580be8c7f92a9414d566b445a5727932ec9c0d2904270c08943632",
+    "query-00108.smt2": "ec3174c69a21099ec7de828a1256d640eb0ee335e1223c5cf326d76f7f8117f9",
+    "query-00109.smt2": "8ecf710aaf41097a7275da3acda2c40c560607cb5dac4c194830ddffe660c15e",
+    "query-00110.smt2": "ec3174c69a21099ec7de828a1256d640eb0ee335e1223c5cf326d76f7f8117f9",
+    "query-00111.smt2": "423d07bb5f86e52dea299c88cef33fc2360d14a1dd906dbf1a5aded803d5e5e9",
+    "query-00112.smt2": "ec3174c69a21099ec7de828a1256d640eb0ee335e1223c5cf326d76f7f8117f9",
+    "query-00113.smt2": "caea7bfa5a426b8db1d2048ddbe240836691e7ea8443a1785f2cb38e119332aa",
+    "query-00114.smt2": "5087f7e758dd1f1cdf814e9b6a9a0dee120300c2e08d240e3b7bf3555c619d92",
+    "query-00115.smt2": "c01c6f29a7a0a26df86ac36c03903f1382b03e7a0a598e43ccbd4389214f765d",
+    "query-00116.smt2": "0cf1e8974b49cbd393083964aaac430a048386889582fbfe269a324faf2657d7",
+    "query-00117.smt2": "e2117b45093da82c7d0aa9cbc604abecace6faa540e55e80ee478783e78346ab",
+    "query-00118.smt2": "1767932febdc0f5f953504f96faf307711a62443ceb578d8ea3e1d33b31f668d",
+    "query-00119.smt2": "582ef4c95a2225d0187a7adbac4920d2512b226a1c8933421ba472fdda9c222e",
+    "query-00120.smt2": "e357279d51898785278b6d89ea74cdeaa373b32134feb74cf6962e10fb077132",
+    "query-00121.smt2": "c07fe53ac3ea95a538e18bf68386e91edadc6a5143e81b758c7881e09079f473",
+    "query-00122.smt2": "11d55904402b7268f6c4907e8678b2fcc114f2b38b44ad3b178c8ff485f6efa9",
+    "query-00123.smt2": "f0bc7ac09e7b5c8d109f815ee9a267b44a25fe9ec00552f6e75de5056130e826",
+    "query-00124.smt2": "8cf3aae4b36a381b94868d336f49b409e251b5808cb9a7cc6a064e34eb50cbc6",
+    "query-00125.smt2": "eb47dfb6128a2c1554331524a11c6dbc4e474f7858332ad24279d6ea9aa00e11",
+    "query-00126.smt2": "4b5566c9dd2fbf1240f044545db316309f3ad2992659b153b6fc5de565a54175",
+    "query-00127.smt2": "f380a930a30877f3303104e4f49356385b46b0aa6de3420a0fad8935ed6750f3",
+    "query-00128.smt2": "ed3063f2edd2bf6f01b21b645ef8fc5c5e744de0f30bda254e9892c8c794bbe6",
+    "query-00129.smt2": "a089567d05955b1d1a77baff82876bfeab84e3fb799c3606d45066c02f4d9229",
+    "query-00130.smt2": "70c7d546b7eea7d4bbd82ccc16992dbe5e973919acf2738326c0e4b426cf1bb2",
+    "query-00131.smt2": "5c59b693f3cbc62e9ec46782e2b14567302a198439a977ac1223dbd61fc358c1",
+    "query-00132.smt2": "fb40c97ae4ed0719f8baf83883bbe0bf819bb3598a7695e4c588722eae116f84",
+    "query-00133.smt2": "66ce5bbbe1edb16d9056d337cbbffa17efdb79c6fdc6fce801afdfe4d476d682",
+    "query-00134.smt2": "7fb91ebfddf7f3eb12c6e633815f270e36e51260b86a350623d7aa2d505b5e5b",
+    "query-00135.smt2": "8c847062d0c3601b58bed5e7f93c73cb754b7739ad5569aa7829b7c8257ad3ad",
+    "query-00136.smt2": "c9edfd645fbaa4258c3672c14f720d6bb87f5b71d4f75aa776a3b14381a17f54",
+    "query-00137.smt2": "dd145a52311d7705b0e3e5c3ed1c7bba322c1597e6e1d5d6be2ff98783605ad7",
+    "query-00138.smt2": "eea4be034b9fcc71671b3f812ab02af0c0062239b90bc4d6782e619c7b587e6e",
+    "query-00139.smt2": "e85e8e152ff866139292ea4839666f29a0979b0a9bb85bcbfce00b407690eab7",
+    "query-00140.smt2": "d38ac22f94d0bea6c353ddebf5752475899af9d74dbdb12f3dcb6fbe850f3390",
+    "query-00141.smt2": "100f5defc21e1cba1dac05e521b5b639b2162dba114a32e7351df77119b2d87b",
+    "query-00142.smt2": "164c64ee6c8f195e8224acee1fd401009418978a74c379d56643018e67969461",
+    "query-00143.smt2": "6647f1f5555f457ccf16111bfd1b9a2b8c27ce6df265f3416de428a78ad39480",
+    "query-00144.smt2": "eaa97aed21d13f3895a92701e033c489d20315be6ce9a5aac93ddc38447ae800",
+    "query-00145.smt2": "50a7f45c68e5b2ed60638f5e8527b1bbbecdbd465426346b8cf0e5289f41f78c",
+    "query-00146.smt2": "b0d3716f0544f0d112894dbd9a9354152562334f0af036bd46966c48f9e62fc7",
+    "query-00147.smt2": "3370838e47da47e85cf7baed77a336bad39ccb02463dd3c4742cdd4d3f79d7c0",
+    "query-00148.smt2": "1bd35c38d04863f4fa8bae031954af2dbfd2ce556002cedb6a07e3ca822a8755",
+    "query-00149.smt2": "ee6148b74e9f19267e6752ed87ad3211717147c7f1e31ca3258c25853ec08cb4",
+    "query-00150.smt2": "47ccaf9b2cfaafa90d69089abe4ec1c6c5aba9f966b682d7c0827be4e8d5625b",
+    "query-00151.smt2": "33118a96f576ef9e8ceefc79d47f201a34ed899d06a98f2f8e29e05883dabcf8",
+    "query-00152.smt2": "f284dc53794ec3761234baf69468e24560d2a31e6d5cb3e967e6575d1e4dd3dc",
+    "query-00153.smt2": "1b7b4af00dc741eb7e955642731f4f1fca80d6ee13977640728abc003022e946",
+    "query-00154.smt2": "9e9de1e5c957cac33f872b53b328a1d02628135718e7fefd69bfc2818a3d5ae6",
+    "query-00155.smt2": "61c82995dd32c18428e45a449c2592db3f199cade518e31c7c7507e671ce84eb",
+    "query-00156.smt2": "4bf7865644496551ac8b9460c7db866f898a7e55036b4e5197069fa7f6f7910d",
+    "query-00157.smt2": "d1302f6133e68f419611b83a33af1f689abbf9cd715707d67e029965a6ae098d",
+    "query-00158.smt2": "f4c5ae2cf0100a3cdf8ee3d8bda7e8654c70136d3112e0d240b54e38123da6a4",
+    "query-00159.smt2": "ac2257f46044e632d848ec3f1ba76217ee4181d1bfd2e440fd28143c7509a963",
+    "query-00160.smt2": "dd1a00e679ebe83d59e7e88c9b3a16ba0ae5951961d1518f31139d65a7885d1e",
+    "query-00161.smt2": "ff48bd46a969034845cbfdf52db683df616fc15dcadd4233cfccfa1033a07fe9",
+    "query-00162.smt2": "1f4790b7c470d17bb36280341e9d61cb60866341c28022a1d266a8dce4d37fd8",
+    "query-00163.smt2": "fea35836ab97d0d34f523592362bad16b004948a79ee8ac78bb95c3d97472dd3",
+    "query-00164.smt2": "45ef493d31beb1378431799144985c07530ad76906cbca01b2a394f741cbfbdc",
+    "query-00165.smt2": "3305b34f786783c0b01385d8a98f390456d130a43f66d2be1c89861394076f07",
+    "query-00166.smt2": "ef5e4d2fbbc49b85d7fc6d3fd6d00bef3b5eb9e03ce0381ab3017008b5aaeaa1",
+    "query-00167.smt2": "0964848ea8c4326fc51af78aba4bdd9341bb5c610d5631c26ef14d7f353033ac",
+    "query-00168.smt2": "5d854edf8262f7fcb0f5d343b7ecff9e6173f50eaed873f2699b6b9439d25c5f",
+    "query-00169.smt2": "cbb181f2557971339edb11eb983a7c5502ab51c336752eebed2b703dfa2ee2c8",
+    "query-00170.smt2": "5be987b43bd8d37b9903d11477633cc856176aac73a9a757b9a0b2d8bed0b5c0",
+    "query-00171.smt2": "9aec6cc41922a70504b571232575d57fdec1c7ce761425054058f7d59ec0b5ea",
+    "query-00172.smt2": "57a28a214577b50b74a00605f83a494d8a05fc0b216044ba7259d4c0a30c24d1",
+    "query-00173.smt2": "779c087df06867126e1fe8f323bdf288f4cfe486fce9cb74996d20231920bc60",
+    "query-00174.smt2": "c92051c25b392beabcf92e1d4cb255b24905698f1812ba167576752746beadaf",
+    "query-00175.smt2": "f0bafe9ef5a26ad7ef0a447eb16f72c0989afa51bfbc03fde746034097f983ae",
+    "query-00176.smt2": "f64e9e18e1150753851121523f2fc2e5f10405f37561e247efb7f08699d063a1",
+    "query-00177.smt2": "0b908a0f55159d9b2f36d396213cf551fe2b770e7f82d8e68cb47c00c84eecbd",
+    "query-00178.smt2": "9ff94eeddc8f85e02b0f28aaf4c06c750ec42df0928e4271e264e2e4817d12d7",
+    "query-00179.smt2": "79749220b433caad98a36d99a4b9d80cde05409163ab54a703d6c6fb27098bf9",
+    "query-00180.smt2": "f52de0ead3244dcf93038e50b001cbd45f8806e4681ae74f949a7108499be792",
+    "query-00181.smt2": "83f5deb1d3a7595f1ca2cabbea76935e451a97cbb11faedf7bdac330eecd51ab",
+    "query-00182.smt2": "47fd52257ccfa899517a8dbd73f46dd461e13503b49a0019f28e3f17192f7fb1",
+    "query-00183.smt2": "363b09a0830c44c8bd76148aaf16ad8b0ef1eba7645ac094e26ee2f56ec683a9",
+    "query-00184.smt2": "4432c60e558a814035deb535f715c24dc4d97642409fe08e4294e24f4a15a2fb",
+    "query-00185.smt2": "f4794103b1e67ddb25eacdd5716cb211c767346b559ab3d5e62d4768e50e38a0",
+    "query-00186.smt2": "0bff373fa7dbaaf85056dcad67f6372262bb89b421ec49a3c9b585cefde01010",
+    "query-00187.smt2": "681699203f3a45046522036280bef5c62895e580bcf3e8231c95c46297b00ac9",
+    "query-00188.smt2": "173c4170c6d378984a41c14333b26948714ed38d0c2ecc151d7727b8954d779b",
+    "query-00189.smt2": "33736866498d656e62cc2052174f31168eaf17931afcf119e5431b5807e946b6",
+    "query-00190.smt2": "d264f47423d94b22b02f8286352fb24cd6d33f16e64ae963991c6137d8d100ed",
+    "query-00191.smt2": "3823a67d482c760182e4532d7db1f1884a70baeafca69985088ffe478ed948d5",
+    "query-00192.smt2": "e7ac4d2b8cc8afeaa712407eef9ed65f4c08aef96ce25cde878370a2fca5f542",
+    "query-00193.smt2": "605122103e91ce54035c92432d347c0cc09c708083d03aac36907bdde6e7d619",
+    "query-00194.smt2": "eb7bfa99076243f86bd9fbfe41bda1f23663dede0679e2abafb27827ebbdf1ff",
+    "query-00195.smt2": "4f3aa9a83273e946e4eb3f6d6675e281006ab667ef3840c49945fa0140d56bb2"
+  }
+}

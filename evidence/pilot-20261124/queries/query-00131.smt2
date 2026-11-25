@@ -1,0 +1,15 @@
+; benchmark generated from python API
+(set-info :status unknown)
+(declare-fun left () Int)
+(declare-fun right () Int)
+(assert
+ (let (($x115 (= left right)))
+(let (($x67 (and (= left left) (= (ite (<= left right) right left) right))))
+(let (($x122 (or $x67 (and $x115 (= (ite (<= left right) right left) left)))))
+(let (($x37 (<= left right)))
+(let ((?x17 (ite $x37 right left)))
+(let (($x105 (and (and (>= left (ite $x37 left right)) (<= left ?x17)) (and (>= ?x17 (ite $x37 left right)) (<= ?x17 ?x17)))))
+(let (($x47 (<= left ?x17)))
+(let (($x128 (and $x47 $x105)))
+(and true (not (and $x128 $x122))))))))))))
+(check-sat)

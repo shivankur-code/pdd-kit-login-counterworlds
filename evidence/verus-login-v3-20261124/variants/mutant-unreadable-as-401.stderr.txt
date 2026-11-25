@@ -1,0 +1,16 @@
+error: postcondition not satisfied
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\mutant-unreadable-as-401.rs:397:9
+    |
+397 |           found matches Some(a) && bcrypt_verdict(password@, a.password_hash@) is None ==> r matches Err(LoginError::UnreadableHash(_)),
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+...
+404 | / {
+405 | |     match found {
+406 | |         None => Err(LoginError::Unauthorized),
+407 | |         Some(row) => match check_password(password, row.password_hash.as_str()) {
+...   |
+419 | | }
+    | |_- at the end of the function body
+
+error: aborting due to 1 previous error
+

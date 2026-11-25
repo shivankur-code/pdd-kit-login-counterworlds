@@ -1,0 +1,57 @@
+error: matches with && is currently not allowed on the right-hand-side of most binary operators (use parentheses)
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\published-clauses-as-written.rs:270:80
+    |
+270 | ...&& password_matches(password@, a.password_hash) && token_claims(t@, config.jwt_secret@) matches Some(c) && c.sub@ == a.id && c.role@ == a.role),
+    |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: matches with && is currently not allowed on the right-hand-side of most binary operators (use parentheses)
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\published-clauses-as-written.rs:280:115
+    |
+280 | ....role@ == admin_role()) ==> (email is None && username matches Some(u) && admin_on_file(u@) is Some),
+    |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: matches with ==> is currently not allowed on the right-hand-side of most binary operators (use parentheses)
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\published-clauses-as-written.rs:370:9
+    |
+370 |         email is None && username matches Some(u) ==> r == Ok::<LookupTarget, LoginError>(LookupTarget::AdminByUsername(u)),
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0425]: cannot find value `t` in this scope
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\published-clauses-as-written.rs:282:62
+    |
+282 |         (r matches Ok(t) && email is Some) ==> (token_claims(t@, config.jwt_secret@) matches Some(c) && c.role@ == customer_role()),
+    |                                                              ^ not found in this scope
+    |
+help: a local variable with a similar name exists
+    |
+282 -         (r matches Ok(t) && email is Some) ==> (token_claims(t@, config.jwt_secret@) matches Some(c) && c.role@ == customer_role()),
+282 +         (r matches Ok(t) && email is Some) ==> (token_claims(r@, config.jwt_secret@) matches Some(c) && c.role@ == customer_role()),
+    |
+
+error[E0425]: cannot find value `c` in this scope
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\published-clauses-as-written.rs:401:58
+    |
+401 |         r matches Ok(c) && target is AdminByUsername ==> c.role@ == admin_role(),
+    |                                                          ^ not found in this scope
+    |
+help: a local variable with a similar name exists
+    |
+401 -         r matches Ok(c) && target is AdminByUsername ==> c.role@ == admin_role(),
+401 +         r matches Ok(c) && target is AdminByUsername ==> r.role@ == admin_role(),
+    |
+
+error[E0425]: cannot find value `c` in this scope
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\published-clauses-as-written.rs:403:58
+    |
+403 |         r matches Ok(c) && target is CustomerByEmail ==> c.role@ == customer_role(),
+    |                                                          ^ not found in this scope
+    |
+help: a local variable with a similar name exists
+    |
+403 -         r matches Ok(c) && target is CustomerByEmail ==> c.role@ == customer_role(),
+403 +         r matches Ok(c) && target is CustomerByEmail ==> r.role@ == customer_role(),
+    |
+
+error: aborting due to 6 previous errors
+
+For more information about this error, try `rustc --explain E0425`.

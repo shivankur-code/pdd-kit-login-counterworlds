@@ -1,0 +1,178 @@
+{
+  "status": "PASS",
+  "pilot_result_sha256": "7d2c80d566adbfd9d73335f16893dc2d0595a126a2cabda54997ab3e37f3c244",
+  "pilot_audit_sha256": "4ba8ef05d004008e211102de6b630961f149b9ea44ca03caa27596c5423da85d",
+  "controls_sha256": "1f720b2a7cf2f0b75ba4a3b85b6a1056fd5a9b751ba0ed03ec9f1b62879b0a21",
+  "validator_sha256": "4880eebe97049eb7b5c6b2f90602b33c26daffba4086cf241f1e2df83d695784",
+  "pilot_queries_accounted": 195,
+  "control_queries_replayed": 16,
+  "control_sat_witnesses_checked": 5,
+  "isolated_mutants_concretely_replayed": 8,
+  "preserved_failed_control_queries": {
+    "query-00001.smt2": "e397027f2bb23ca3f6cbc68f33d391146f820ac3b81f754c78a1fc0fcb28bc7b",
+    "query-00002.smt2": "f2c9534941c8efb2f285ed3aac064296ac3a1ed3e8821a54c969f1d0e76ec865",
+    "query-00003.smt2": "f8e1d98b83dab3d1482e1785f9a38841442af73d0bdca20a657bfe91e2e793bc",
+    "query-00004.smt2": "17a778d725ef2c80a7b20ee6d9a105558b9f992a41da74c3fdd7a541c1f0078a",
+    "query-00005.smt2": "5fa84cdf3c10338dc94a558741c2c7bc04d38b79913e835b07db6f73335a8a76",
+    "query-00006.smt2": "8f41c7d4ae578535da95fac0c590c79525d7251a6895b27c3e268a45af9a7f5a",
+    "query-00007.smt2": "b4bf96379a56030d1e83bff31870495120c9b2fa218972ef70c93944709321fb",
+    "query-00008.smt2": "3ce0f8f290ad9d9b43aa084f352abe77d1c8bcc58dd04a3d05f29a1886a956d4",
+    "query-00009.smt2": "ea3a40f358d94777a4999d5ad64b3f60e2ba4f939f7079c8906777d4a2aec22f"
+  },
+  "control_query_sha256": {
+    "query-00001.smt2": "e397027f2bb23ca3f6cbc68f33d391146f820ac3b81f754c78a1fc0fcb28bc7b",
+    "query-00002.smt2": "f2c9534941c8efb2f285ed3aac064296ac3a1ed3e8821a54c969f1d0e76ec865",
+    "query-00003.smt2": "f8e1d98b83dab3d1482e1785f9a38841442af73d0bdca20a657bfe91e2e793bc",
+    "query-00004.smt2": "f8e1d98b83dab3d1482e1785f9a38841442af73d0bdca20a657bfe91e2e793bc",
+    "query-00005.smt2": "85843c1cc803425677328fcc7f885ae918353ae26dc804167b75bcc67e22e7b4",
+    "query-00006.smt2": "4b9e9a03c52b2c81ce9163aa9416e496e8fc6fc52d8eefdef21aab21df7164c2",
+    "query-00007.smt2": "97dd83b799cb1d2da5f4ed9f7bcb742e0edf32e3643aa5104c7c616e4a8236ea",
+    "query-00008.smt2": "0c228d5b41c15130717ff6bb2533a54511ee4f6c5095d38c1b8235c10c758e65",
+    "query-00009.smt2": "636794756bc39c74a7dca8ad447f7260b6b0a3f2ea415b745ebb1ed798141ed4",
+    "query-00010.smt2": "8207900c965b0d993c122360ecda5220aeeceeda6adc5ac3cbc7f2ba435418ff",
+    "query-00011.smt2": "a733980679c151525c8b0a01c5058a2f3a9585861fd0f163e2ea17ae670d9354",
+    "query-00012.smt2": "822d959fd223c9191848cdff4b0264aa21017778d0a86a108811130cd6b1ab82",
+    "query-00013.smt2": "9f60e20b1f89e511edeb16cee0151faa091f34f6977c91d08808f1731f046c52",
+    "query-00014.smt2": "e0937a6e37a4fc285071972877cda8b91e3ec72dcbf57265807c9480f185ae36",
+    "query-00015.smt2": "5399924dedeeb96a08c7ec461575c8b117291d04b9a4a062546cab9f19d04b66",
+    "query-00016.smt2": "5399924dedeeb96a08c7ec461575c8b117291d04b9a4a062546cab9f19d04b66"
+  },
+  "summary": [
+    {
+      "task": "withdrawal",
+      "candidates": 16,
+      "weak_accepted": 3,
+      "strong_accepted": 1,
+      "weak_disagreeing_pairs": 3,
+      "weak_equivalent_pairs": 0,
+      "strong_disagreeing_pairs": 0
+    },
+    {
+      "task": "transfer",
+      "candidates": 16,
+      "weak_accepted": 4,
+      "strong_accepted": 1,
+      "weak_disagreeing_pairs": 6,
+      "weak_equivalent_pairs": 0,
+      "strong_disagreeing_pairs": 0
+    },
+    {
+      "task": "login",
+      "candidates": 16,
+      "weak_accepted": 4,
+      "strong_accepted": 1,
+      "weak_disagreeing_pairs": 6,
+      "weak_equivalent_pairs": 0,
+      "strong_disagreeing_pairs": 0
+    },
+    {
+      "task": "sort",
+      "candidates": 16,
+      "weak_accepted": 9,
+      "strong_accepted": 1,
+      "weak_disagreeing_pairs": 36,
+      "weak_equivalent_pairs": 0,
+      "strong_disagreeing_pairs": 0
+    }
+  ],
+  "examples": [
+    {
+      "task": "withdrawal",
+      "intended_id": [
+        0,
+        0
+      ],
+      "alternative_id": [
+        0,
+        1
+      ],
+      "input": {
+        "balance": 1,
+        "amount": 1
+      },
+      "intended": [
+        true,
+        0
+      ],
+      "alternative": [
+        true,
+        1
+      ]
+    },
+    {
+      "task": "transfer",
+      "intended_id": [
+        0,
+        0
+      ],
+      "alternative_id": [
+        0,
+        1
+      ],
+      "input": {
+        "balance": 1,
+        "amount": 1,
+        "recipient": 0
+      },
+      "intended": [
+        0,
+        1
+      ],
+      "alternative": [
+        0,
+        0
+      ]
+    },
+    {
+      "task": "login",
+      "intended_id": [
+        0,
+        0
+      ],
+      "alternative_id": [
+        0,
+        1
+      ],
+      "input": {
+        "exists": true,
+        "password": true,
+        "locked": false,
+        "admin": false,
+        "account": 1
+      },
+      "intended": [
+        true,
+        false,
+        1
+      ],
+      "alternative": [
+        true,
+        false,
+        0
+      ]
+    },
+    {
+      "task": "sort",
+      "intended_id": [
+        2,
+        3
+      ],
+      "alternative_id": [
+        3,
+        3
+      ],
+      "input": {
+        "left": 1,
+        "right": 0
+      },
+      "intended": [
+        0,
+        1
+      ],
+      "alternative": [
+        1,
+        1
+      ]
+    }
+  ]
+}

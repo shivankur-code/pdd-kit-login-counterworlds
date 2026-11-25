@@ -1,0 +1,752 @@
+{
+  "started_utc": "2026-11-24T18:41:35.943590+00:00",
+  "page": "https://githubnext.com/projects/pdd-kit/",
+  "asset": {
+    "url": "https://githubnext.com/_astro/SpecTour.CPfG4xDY.js",
+    "sha256_at_extraction": "35c12fb4b440e391c5600403e5214a72128ac4e0291159fbcb665cc629506b8a"
+  },
+  "published_login_rs": {
+    "path_outside_repo": "%USERPROFILE%\\AppData\\Local\\pdd-counterworlds-source\\published-login.rs",
+    "sha256_lf": "b8dc10d0e3243fdce7c2f9ee72d8dd06219843633a7221d92f6220991d471c57"
+  },
+  "model": {
+    "file": "login_model.rs",
+    "sha256": "cbdfd3c97f4a7981c94b6835dcfb59115edcfa5ec4702b544880342dbfe5f965"
+  },
+  "harness": {
+    "file": "study.py",
+    "sha256": "96ac0b6ec0ad33c0c12548dbcfc950331bfed828fdb33a8bc22056fe5d6d40e2"
+  },
+  "environment": {
+    "verus": {
+      "verus": {
+        "profile": "release",
+        "version": "0.2026.11.22.1ce6a59",
+        "platform": {
+          "os": "windows",
+          "arch": "aarch64"
+        },
+        "toolchain": "1.100.0-aarch64-pc-windows-msvc (overridden by environment variable RUSTUP_TOOLCHAIN)",
+        "commit": "1ce6a59bd72713cf486a7660097fe5ac57519617"
+      }
+    },
+    "binary_sha256": {
+      "verus.exe": "8d721229fb44cc057ecd8ff0ef8dc7c78412c8ae1005d1bd24889090527996a3",
+      "rust_verify.exe": "9862a5594a66b9bd0473890fdc6f055a91e7fd0f2b17291442b12eea90b6c67e",
+      "z3.exe": "81b92e3ff08dc5571a93e65bc34cf6ba3c1446e80be22f00ecac0bf6a19d27fd"
+    },
+    "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "ARM64",
+    "processor_architecture": "AMD64"
+  },
+  "fidelity": {
+    "passed": true,
+    "published_lines": 368,
+    "counts": {
+      "verbatim": 268,
+      "after_type_path_substitution": 6,
+      "regrouped": 6,
+      "blank": 40,
+      "excluded_header_and_imports": 14,
+      "excluded_host_type_specifications": 24,
+      "excluded_trusted_body": 5,
+      "excluded_proved_body_placeholder": 5
+    },
+    "missing_published_lines": [],
+    "extra_model_lines_outside_bodies": [],
+    "contracts_compared": [
+      "check_password",
+      "database_error",
+      "decide_login",
+      "ex_admin_find_by_username",
+      "ex_customer_find_by_email",
+      "ex_generate_token",
+      "expiry_from_now",
+      "issue_token",
+      "login_core",
+      "login_flow",
+      "lookup_target"
+    ],
+    "contract_block_mismatches": [],
+    "verifier_attributes": [
+      [
+        "external_fn_specification",
+        "ex_customer_find_by_email"
+      ],
+      [
+        "external_fn_specification",
+        "ex_admin_find_by_username"
+      ],
+      [
+        "external_body",
+        "check_password"
+      ],
+      [
+        "external_body",
+        "expiry_from_now"
+      ],
+      [
+        "external_fn_specification",
+        "ex_generate_token"
+      ],
+      [
+        "external_body",
+        "database_error"
+      ]
+    ],
+    "verifier_attributes_expected": [
+      [
+        "external_fn_specification",
+        "ex_customer_find_by_email"
+      ],
+      [
+        "external_fn_specification",
+        "ex_admin_find_by_username"
+      ],
+      [
+        "external_body",
+        "check_password"
+      ],
+      [
+        "external_body",
+        "expiry_from_now"
+      ],
+      [
+        "external_fn_specification",
+        "ex_generate_token"
+      ],
+      [
+        "external_body",
+        "database_error"
+      ]
+    ],
+    "forbidden_patterns_found": [],
+    "regroupings": [
+      {
+        "published": "        r matches Ok(t) ==> (named_account(email, username) matches Some(a) && password_matches(password@, a.password_hash) && token_claims(t@, config.jwt_secret@) matches Some(c) && c.sub@ == a.id && c.role@ == a.role),",
+        "model": "        r matches Ok(t) ==> (named_account(email, username) matches Some(a) && password_matches(password@, a.password_hash) && (token_claims(t@, config.jwt_secret@) matches Some(c) && c.sub@ == a.id && c.role@ == a.role)),",
+        "why": "parentheses around the second `matches` chain"
+      },
+      {
+        "published": "        (r matches Ok(t) && token_claims(t@, config.jwt_secret@) matches Some(c) && c.role@ == admin_role()) ==> (email is None && username matches Some(u) && admin_on_file(u@) is Some),",
+        "model": "        (r matches Ok(t) && token_claims(t@, config.jwt_secret@) matches Some(c) && c.role@ == admin_role()) ==> (email is None && (username matches Some(u) && admin_on_file(u@) is Some)),",
+        "why": "parentheses around the `matches` chain on the right of &&"
+      },
+      {
+        "published": "        (r matches Ok(t) && email is Some) ==> (token_claims(t@, config.jwt_secret@) matches Some(c) && c.role@ == customer_role()),",
+        "model": "        r matches Ok(t) ==> (email is Some ==> (token_claims(t@, config.jwt_secret@) matches Some(c) && c.role@ == customer_role())),",
+        "why": "(A and B) implies C, written as A implies (B implies C) so `t` stays in scope"
+      },
+      {
+        "published": "        email is None && username matches Some(u) ==> r == Ok::<LookupTarget, LoginError>(LookupTarget::AdminByUsername(u)),",
+        "model": "        email is None ==> (username matches Some(u) ==> r == Ok::<LookupTarget, LoginError>(LookupTarget::AdminByUsername(u))),",
+        "why": "(A and B) implies C, written as A implies (B implies C)"
+      },
+      {
+        "published": "        r matches Ok(c) && target is AdminByUsername ==> c.role@ == admin_role(),",
+        "model": "        r matches Ok(c) ==> (target is AdminByUsername ==> c.role@ == admin_role()),",
+        "why": "(A and B) implies C, written as A implies (B implies C) so `c` stays in scope"
+      },
+      {
+        "published": "        r matches Ok(c) && target is CustomerByEmail ==> c.role@ == customer_role(),",
+        "model": "        r matches Ok(c) ==> (target is CustomerByEmail ==> c.role@ == customer_role()),",
+        "why": "(A and B) implies C, written as A implies (B implies C) so `c` stays in scope"
+      }
+    ],
+    "substitutions": [
+      [
+        "sqlx::SqlitePool",
+        "SqlitePool"
+      ],
+      [
+        "sqlx::Error",
+        "SqlxError"
+      ]
+    ]
+  },
+  "fidelity_tamper_controls": [
+    {
+      "control": "weaken a decide_login clause",
+      "fidelity_passed": false
+    },
+    {
+      "control": "add a precondition to login_flow",
+      "fidelity_passed": false
+    },
+    {
+      "control": "trust a proved function",
+      "fidelity_passed": false
+    },
+    {
+      "control": "add an extra declaration among the copied contract",
+      "fidelity_passed": false
+    },
+    {
+      "control": "add an admitted lemma among the helpers",
+      "fidelity_passed": false
+    }
+  ],
+  "variants": [
+    {
+      "name": "reference",
+      "kind": "reference",
+      "where": null,
+      "story": "Signs with the clock's 24-hour expiry, as the issue_token doc comment says.",
+      "expected": "verified",
+      "outcome": "verified",
+      "met_expectation": true,
+      "contracts_changed": [],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "9a75da81e9e18da4bfc4d7b28015c91995c5020cb62fdeccbf01d95e2a329521",
+      "exit_code": 0,
+      "seconds": 1.48,
+      "verus_summary": {
+        "encountered-error": false,
+        "encountered-vir-error": false,
+        "success": true,
+        "verified": 8,
+        "errors": 0,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [],
+      "command": [
+        "verus.exe",
+        "reference.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "published-clauses-as-written",
+      "kind": "front-end control",
+      "where": null,
+      "story": "The reference with the six regrouped clauses put back exactly as published.",
+      "expected": "front-end error",
+      "outcome": "front-end error",
+      "met_expectation": true,
+      "contracts_changed": [
+        "decide_login",
+        "login_flow",
+        "lookup_target"
+      ],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "349d3edd807c54eaeee6836f0d4ac228aeca82ffaf8f59f1b97133e0f86259db",
+      "exit_code": 1,
+      "seconds": 0.37,
+      "verus_summary": {
+        "encountered-error": true,
+        "encountered-vir-error": false,
+        "success": false,
+        "verified": 0,
+        "errors": 0,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [
+        {
+          "message": "matches with && is currently not allowed on the right-hand-side of most binary operators (use parentheses)",
+          "line": 270,
+          "source": "r matches Ok(t) ==> (named_account(email, username) matches Some(a) && password_matches(password@, a.password_hash) && token_claims(t@, config.jwt_secret@) matches Some(c) && c.sub@ == a.id && c.role@ == a.role),",
+          "clause_comment": "A token only for the account the login names, with its right password; it carries that account's id and its table's role."
+        },
+        {
+          "message": "matches with && is currently not allowed on the right-hand-side of most binary operators (use parentheses)",
+          "line": 280,
+          "source": "(r matches Ok(t) && token_claims(t@, config.jwt_secret@) matches Some(c) && c.role@ == admin_role()) ==> (email is None && username matches Some(u) && admin_on_file(u@) is Some),",
+          "clause_comment": "The admin role only for an admins row found by username, with no email sent."
+        },
+        {
+          "message": "matches with ==> is currently not allowed on the right-hand-side of most binary operators (use parentheses)",
+          "line": 370,
+          "source": "email is None && username matches Some(u) ==> r == Ok::<LookupTarget, LoginError>(LookupTarget::AdminByUsername(u)),",
+          "clause_comment": "With no email, a username sends the search to admins for exactly that username."
+        },
+        {
+          "message": "cannot find value `t` in this scope",
+          "line": 282,
+          "source": "(r matches Ok(t) && email is Some) ==> (token_claims(t@, config.jwt_secret@) matches Some(c) && c.role@ == customer_role()),",
+          "clause_comment": "An email login's token always carries the customer role."
+        },
+        {
+          "message": "cannot find value `c` in this scope",
+          "line": 401,
+          "source": "r matches Ok(c) && target is AdminByUsername ==> c.role@ == admin_role(),",
+          "clause_comment": "An admins-table search gives the role text \"admin\"."
+        },
+        {
+          "message": "cannot find value `c` in this scope",
+          "line": 403,
+          "source": "r matches Ok(c) && target is CustomerByEmail ==> c.role@ == customer_role(),",
+          "clause_comment": "A customers-table search gives the role text \"customer\"."
+        }
+      ],
+      "command": [
+        "verus.exe",
+        "published-clauses-as-written.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "mutant-refuse-everyone",
+      "kind": "published mutant",
+      "where": "decide_login",
+      "story": "PDD Kit mutant: always returns Err(LoginError::Unauthorized), whatever the password.",
+      "expected": "rejected",
+      "outcome": "rejected",
+      "met_expectation": true,
+      "contracts_changed": [],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "ea6f9e0e4f949646e97ea7f6d25a462da6b2b486714f5cd3b9419f5b137513f3",
+      "exit_code": 1,
+      "seconds": 1.45,
+      "verus_summary": {
+        "encountered-error": true,
+        "encountered-vir-error": false,
+        "success": false,
+        "verified": 7,
+        "errors": 1,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [
+        {
+          "message": "postcondition not satisfied",
+          "line": 393,
+          "source": "found matches Some(a) && password_matches(password@, a.password_hash@) ==> r is Ok,",
+          "clause_comment": "The right password for a found row always gets claims."
+        },
+        {
+          "message": "postcondition not satisfied",
+          "line": 397,
+          "source": "found matches Some(a) && bcrypt_verdict(password@, a.password_hash@) is None ==> r matches Err(LoginError::UnreadableHash(_)),",
+          "clause_comment": "A found row whose hash bcrypt cannot read gets no claims: refused as UnreadableHash."
+        }
+      ],
+      "command": [
+        "verus.exe",
+        "mutant-refuse-everyone.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "mutant-skip-check",
+      "kind": "published mutant",
+      "where": "decide_login",
+      "story": "PDD Kit mutant: issues claims for any row it finds, without asking check_password.",
+      "expected": "rejected",
+      "outcome": "rejected",
+      "met_expectation": true,
+      "contracts_changed": [],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "ff29504bea08746fa799d110ed9ca28fae706b127e944d8e532032b47a7866f0",
+      "exit_code": 1,
+      "seconds": 1.58,
+      "verus_summary": {
+        "encountered-error": true,
+        "encountered-vir-error": false,
+        "success": false,
+        "verified": 7,
+        "errors": 1,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [
+        {
+          "message": "postcondition not satisfied",
+          "line": 391,
+          "source": "r is Ok ==> found is Some && password_matches(password@, found->Some_0.password_hash@),",
+          "clause_comment": "Claims come back only for a found row whose stored hash matches the password."
+        },
+        {
+          "message": "postcondition not satisfied",
+          "line": 395,
+          "source": "found matches Some(a) && bcrypt_verdict(password@, a.password_hash@) == Some(false) ==> r == Err::<IssuedClaims, LoginError>(LoginError::Unauthorized),",
+          "clause_comment": "A wrong password for a found row whose hash bcrypt can read is refused as Unauthorized."
+        },
+        {
+          "message": "postcondition not satisfied",
+          "line": 397,
+          "source": "found matches Some(a) && bcrypt_verdict(password@, a.password_hash@) is None ==> r matches Err(LoginError::UnreadableHash(_)),",
+          "clause_comment": "A found row whose hash bcrypt cannot read gets no claims: refused as UnreadableHash."
+        }
+      ],
+      "command": [
+        "verus.exe",
+        "mutant-skip-check.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "mutant-username-first",
+      "kind": "published mutant",
+      "where": "lookup_target",
+      "story": "PDD Kit mutant: searches admins whenever a username is sent, even if an email was sent too.",
+      "expected": "rejected",
+      "outcome": "rejected",
+      "met_expectation": true,
+      "contracts_changed": [],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "aaeda255fca4a02b02a00d13b03e44edeb5b80921654f315a90b162940ffb816",
+      "exit_code": 1,
+      "seconds": 1.49,
+      "verus_summary": {
+        "encountered-error": true,
+        "encountered-vir-error": false,
+        "success": false,
+        "verified": 7,
+        "errors": 1,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [
+        {
+          "message": "postcondition not satisfied",
+          "line": 368,
+          "source": "email matches Some(e) ==> r == Ok::<LookupTarget, LoginError>(LookupTarget::CustomerByEmail(e)),",
+          "clause_comment": "An email, when sent, wins: customers are searched for exactly that email."
+        }
+      ],
+      "command": [
+        "verus.exe",
+        "mutant-username-first.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "mutant-outage-as-401",
+      "kind": "published mutant",
+      "where": "issue_token",
+      "story": "PDD Kit mutant: maps a failed lookup to AppError::Unauthorized instead of database_error.",
+      "expected": "rejected",
+      "outcome": "rejected",
+      "met_expectation": true,
+      "contracts_changed": [],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "1bce0df847473c4f68647d53a03745a30223384bb0a468c4864d7256b2f29be6",
+      "exit_code": 1,
+      "seconds": 1.72,
+      "verus_summary": {
+        "encountered-error": true,
+        "encountered-vir-error": false,
+        "success": false,
+        "verified": 7,
+        "errors": 1,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [
+        {
+          "message": "postcondition not satisfied",
+          "line": 348,
+          "source": "outcome matches Err(LoginError::Database(_)) ==> r matches Err(AppError::Internal(_)),",
+          "clause_comment": "Failed lookup: 500."
+        }
+      ],
+      "command": [
+        "verus.exe",
+        "mutant-outage-as-401.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "mutant-unreadable-as-401",
+      "kind": "published mutant",
+      "where": "decide_login",
+      "story": "PDD Kit mutant: treats an error from check_password as a wrong password.",
+      "expected": "rejected",
+      "outcome": "rejected",
+      "met_expectation": true,
+      "contracts_changed": [],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "94eca78090405dcd12702471fbd806b9ed44d169d97550079e8ce9de29743294",
+      "exit_code": 1,
+      "seconds": 1.56,
+      "verus_summary": {
+        "encountered-error": true,
+        "encountered-vir-error": false,
+        "success": false,
+        "verified": 7,
+        "errors": 1,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [
+        {
+          "message": "postcondition not satisfied",
+          "line": 397,
+          "source": "found matches Some(a) && bcrypt_verdict(password@, a.password_hash@) is None ==> r matches Err(LoginError::UnreadableHash(_)),",
+          "clause_comment": "A found row whose hash bcrypt cannot read gets no claims: refused as UnreadableHash."
+        }
+      ],
+      "command": [
+        "verus.exe",
+        "mutant-unreadable-as-401.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "counterworld-expired-on-arrival",
+      "kind": "counterworld",
+      "where": "issue_token",
+      "story": "Writes the clock reading itself (expiry.now) as the expiry: every token is already expiring when issued.",
+      "expected": "verified",
+      "outcome": "verified",
+      "met_expectation": true,
+      "contracts_changed": [],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "10fe3a3653872d6f030349590ae535d774eb82b39e7dfe6b9300e6c698cb5845",
+      "exit_code": 0,
+      "seconds": 1.68,
+      "verus_summary": {
+        "encountered-error": false,
+        "encountered-vir-error": false,
+        "success": true,
+        "verified": 8,
+        "errors": 0,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [],
+      "command": [
+        "verus.exe",
+        "counterworld-expired-on-arrival.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "counterworld-never-expires",
+      "kind": "counterworld",
+      "where": "issue_token",
+      "story": "Skips the clock and writes the largest possible expiry: tokens never expire.",
+      "expected": "verified",
+      "outcome": "verified",
+      "met_expectation": true,
+      "contracts_changed": [],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "c7b5aa5d228a052e0e6aee93aeab1581c93f841a705f254694a4906e2de5c89c",
+      "exit_code": 0,
+      "seconds": 1.76,
+      "verus_summary": {
+        "encountered-error": false,
+        "encountered-vir-error": false,
+        "success": true,
+        "verified": 8,
+        "errors": 0,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [],
+      "command": [
+        "verus.exe",
+        "counterworld-never-expires.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "counterworld-secret-in-500",
+      "kind": "counterworld",
+      "where": "issue_token",
+      "story": "Puts the JWT signing secret into the 500 message for a failed lookup.",
+      "expected": "verified",
+      "outcome": "verified",
+      "met_expectation": true,
+      "contracts_changed": [],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "b4445686010e8a3177f12e5c3f9d4d05ed8f3c57fcfd1b223dc05aeea5183804",
+      "exit_code": 0,
+      "seconds": 1.77,
+      "verus_summary": {
+        "encountered-error": false,
+        "encountered-vir-error": false,
+        "success": true,
+        "verified": 8,
+        "errors": 0,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [],
+      "command": [
+        "verus.exe",
+        "counterworld-secret-in-500.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "repaired-reference",
+      "kind": "repaired contract",
+      "where": "issue_token",
+      "story": "Proposed expiry clauses added; the reference body is unchanged.",
+      "expected": "verified",
+      "outcome": "verified",
+      "met_expectation": true,
+      "contracts_changed": [
+        "expiry_from_now",
+        "issue_token",
+        "login_flow"
+      ],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "881b53a94a6613d1332087232ca8bc0eebeb29f4b7f7c549ffabb23aca2e19a6",
+      "exit_code": 0,
+      "seconds": 1.56,
+      "verus_summary": {
+        "encountered-error": false,
+        "encountered-vir-error": false,
+        "success": true,
+        "verified": 8,
+        "errors": 0,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [],
+      "command": [
+        "verus.exe",
+        "repaired-reference.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "repaired-expired-on-arrival",
+      "kind": "repaired contract",
+      "where": "issue_token",
+      "story": "Proposed expiry clauses added; the expired-on-arrival body.",
+      "expected": "rejected",
+      "outcome": "rejected",
+      "met_expectation": true,
+      "contracts_changed": [
+        "expiry_from_now",
+        "issue_token",
+        "login_flow"
+      ],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "825b4ad1ffc8d1aa556a5afd5af139b8edbea001fbd6fe5d593bf2f7e1fa13b7",
+      "exit_code": 1,
+      "seconds": 3.18,
+      "verus_summary": {
+        "encountered-error": true,
+        "encountered-vir-error": false,
+        "success": false,
+        "verified": 7,
+        "errors": 1,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [
+        {
+          "message": "postcondition not satisfied",
+          "line": 358,
+          "source": "r matches Ok(t) ==> (token_claims(t@, config.jwt_secret@) matches Some(k) && k.exp as int == clock_at_login() as int + 86_400),",
+          "clause_comment": "[Proposed addition] A token expires exactly 24 hours after the clock reading."
+        }
+      ],
+      "command": [
+        "verus.exe",
+        "repaired-expired-on-arrival.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "repaired-never-expires",
+      "kind": "repaired contract",
+      "where": "issue_token",
+      "story": "Proposed expiry clauses added; the never-expires body.",
+      "expected": "rejected",
+      "outcome": "rejected",
+      "met_expectation": true,
+      "contracts_changed": [
+        "expiry_from_now",
+        "issue_token",
+        "login_flow"
+      ],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "80af5efb4af7959bc940c020f12515cd34b75e63e66990ea5e53c37735ac2b7f",
+      "exit_code": 1,
+      "seconds": 1.7,
+      "verus_summary": {
+        "encountered-error": true,
+        "encountered-vir-error": false,
+        "success": false,
+        "verified": 7,
+        "errors": 1,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [
+        {
+          "message": "postcondition not satisfied",
+          "line": 358,
+          "source": "r matches Ok(t) ==> (token_claims(t@, config.jwt_secret@) matches Some(k) && k.exp as int == clock_at_login() as int + 86_400),",
+          "clause_comment": "[Proposed addition] A token expires exactly 24 hours after the clock reading."
+        }
+      ],
+      "command": [
+        "verus.exe",
+        "repaired-never-expires.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    },
+    {
+      "name": "repaired-secret-in-500",
+      "kind": "repaired contract",
+      "where": "issue_token",
+      "story": "Proposed expiry clauses added; the secret-in-500 body (the repair is about expiry only).",
+      "expected": "verified",
+      "outcome": "verified",
+      "met_expectation": true,
+      "contracts_changed": [
+        "expiry_from_now",
+        "issue_token",
+        "login_flow"
+      ],
+      "contract_rule_ok": true,
+      "no_cheating_constructs": true,
+      "source_sha256": "036a7f51f61171b70b2cca99e9484964b69fc33bc8766896dcd9c2b90ec89a7f",
+      "exit_code": 0,
+      "seconds": 1.67,
+      "verus_summary": {
+        "encountered-error": false,
+        "encountered-vir-error": false,
+        "success": true,
+        "verified": 8,
+        "errors": 0,
+        "is-verifying-entire-crate": true
+      },
+      "complaints": [],
+      "command": [
+        "verus.exe",
+        "repaired-secret-in-500.rs",
+        "--crate-type=lib",
+        "--output-json",
+        "--multiple-errors=20"
+      ]
+    }
+  ],
+  "finished_utc": "2026-11-24T18:41:59.855571+00:00",
+  "all_checks_passed": true
+}

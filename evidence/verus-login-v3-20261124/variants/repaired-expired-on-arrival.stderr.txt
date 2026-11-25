@@ -1,0 +1,17 @@
+error: postcondition not satisfied
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\repaired-expired-on-arrival.rs:358:9
+    |
+358 |           r matches Ok(t) ==> (token_claims(t@, config.jwt_secret@) matches Some(k) && k.exp as int == clock_at_login() as int + 86_400),
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+359 |   {
+360 | /     match outcome {
+361 | |         Ok(c) => {
+362 | |             let expiry = expiry_from_now();
+363 | |             let claims = Claims { sub: c.sub, role: c.role, exp: expiry.now };
+...   |
+369 | |         Err(LoginError::Database(e)) => Err(database_error(e)),
+370 | |     }
+    | |_____- at the end of the function body
+
+error: aborting due to 1 previous error
+

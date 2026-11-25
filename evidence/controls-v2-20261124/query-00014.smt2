@@ -1,0 +1,17 @@
+; benchmark generated from python API
+(set-info :status unknown)
+(declare-fun second_1 () Int)
+(declare-fun first_1 () Int)
+(declare-fun second_0 () Int)
+(declare-fun first_0 () Int)
+(declare-fun left () Int)
+(declare-fun right () Int)
+(assert
+ (let (($x19 (or (and (distinct first_0 second_0) true) (and (distinct first_1 second_1) true))))
+(let (($x33 (and (>= second_1 (ite (<= left right) left right)) (<= second_1 (ite (<= left right) right left)))))
+(let (($x144 (and (>= second_0 (ite (<= left right) left right)) (<= second_0 (ite (<= left right) right left)))))
+(let (($x70 (and (>= first_1 (ite (<= left right) left right)) (<= first_1 (ite (<= left right) right left)))))
+(let (($x36 (and (>= first_0 (ite (<= left right) left right)) (<= first_0 (ite (<= left right) right left)))))
+(let (($x84 (and (and (<= first_0 first_1) (and $x36 $x70)) (and (<= second_0 second_1) (and $x144 $x33)))))
+(and true $x84 $x19))))))))
+(check-sat)

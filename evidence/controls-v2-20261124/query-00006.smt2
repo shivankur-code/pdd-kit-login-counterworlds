@@ -1,0 +1,16 @@
+; benchmark generated from python API
+(set-info :status unknown)
+(declare-fun second_1 () Int)
+(declare-fun first_1 () Int)
+(declare-fun second_0 () Int)
+(declare-fun first_0 () Int)
+(declare-fun recipient () Int)
+(declare-fun amount () Int)
+(declare-fun balance () Int)
+(assert
+ (let (($x50 (and (distinct first_1 second_1) true)))
+(let (($x78 (or (and (distinct first_0 second_0) true) $x50)))
+(let (($x70 (and (and (= first_0 (- balance amount)) (>= first_1 recipient)) (and (= second_0 (- balance amount)) (>= second_1 recipient)))))
+(let (($x15 (>= recipient 0)))
+(and (and (>= balance amount) (> amount 0) $x15) $x70 $x78))))))
+(check-sat)

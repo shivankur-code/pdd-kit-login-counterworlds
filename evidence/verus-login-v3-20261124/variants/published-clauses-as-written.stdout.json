@@ -1,0 +1,21 @@
+{
+  "func-details": {},
+  "verification-results": {
+    "encountered-error": true,
+    "encountered-vir-error": false,
+    "success": false,
+    "verified": 0,
+    "errors": 0,
+    "is-verifying-entire-crate": true
+  },
+  "verus": {
+    "profile": "release",
+    "version": "0.2026.11.22.1ce6a59",
+    "platform": {
+      "os": "windows",
+      "arch": "aarch64"
+    },
+    "toolchain": "1.100.0-aarch64-pc-windows-msvc (overridden by environment variable RUSTUP_TOOLCHAIN)",
+    "commit": "1ce6a59bd72713cf486a7660097fe5ac57519617"
+  }
+}

@@ -1,0 +1,17 @@
+error: postcondition not satisfied
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\mutant-username-first.rs:368:9
+    |
+368 |           email matches Some(e) ==> r == Ok::<LookupTarget, LoginError>(LookupTarget::CustomerByEmail(e)),
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+...
+374 | /     match username {
+375 | |         Some(u) => Ok(LookupTarget::AdminByUsername(u)),
+376 | |         None => match email {
+377 | |             Some(e) => Ok(LookupTarget::CustomerByEmail(e)),
+378 | |             None => Err(LoginError::MissingIdentity),
+379 | |         },
+380 | |     }
+    | |_____- at the end of the function body
+
+error: aborting due to 1 previous error
+

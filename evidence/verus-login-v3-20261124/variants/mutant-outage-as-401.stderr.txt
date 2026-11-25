@@ -1,0 +1,17 @@
+error: postcondition not satisfied
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\mutant-outage-as-401.rs:348:9
+    |
+348 |           outcome matches Err(LoginError::Database(_)) ==> r matches Err(AppError::Internal(_)),
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+349 |   {
+350 | /     match outcome {
+351 | |         Ok(c) => {
+352 | |             let expiry = expiry_from_now();
+353 | |             let claims = Claims { sub: c.sub, role: c.role, exp: expiry.exp };
+...   |
+359 | |         Err(LoginError::Database(e)) => Err(AppError::Unauthorized),
+360 | |     }
+    | |_____- at the end of the function body
+
+error: aborting due to 1 previous error
+

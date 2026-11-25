@@ -1,0 +1,24 @@
+error: postcondition not satisfied
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\mutant-refuse-everyone.rs:393:9
+    |
+393 |           found matches Some(a) && password_matches(password@, a.password_hash@) ==> r is Ok,
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+...
+404 | / {
+405 | |     Err(LoginError::Unauthorized)
+406 | | }
+    | |_- at the end of the function body
+
+error: postcondition not satisfied
+   --> %USERPROFILE%\OneDrive - Microsoft\Documents\astra-trading-portfolio\experiments\pdd-counterworlds\evidence\verus-login-v3-20261124\variants\mutant-refuse-everyone.rs:397:9
+    |
+397 |           found matches Some(a) && bcrypt_verdict(password@, a.password_hash@) is None ==> r matches Err(LoginError::UnreadableHash(_)),
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+...
+404 | / {
+405 | |     Err(LoginError::Unauthorized)
+406 | | }
+    | |_- at the end of the function body
+
+error: aborting due to 2 previous errors
+
